@@ -2,8 +2,10 @@ import numpy
 import GA
 
 #sample from: https://towardsdatascience.com/genetic-algorithm-implementation-in-python-5ab67bb124a6
-
+#Y = w1x1 + w2x2 + w3x3 + w4x4 + w5x5 + w6x6
+#Trying to find the optimum weights (w) for the equation with the following inputs
 equation_inputs = [4,-2,3.5,5,-11,-4.7]
+
 num_weights = 6
 
 sol_per_pop = 8

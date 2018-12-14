@@ -1,6 +1,7 @@
 import random
 
 #sample from: https://www.geeksforgeeks.org/genetic-algorithms/
+#String creation
 
 POPULATION_SIZE = 100
 

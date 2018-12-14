@@ -1,6 +1,8 @@
 import numpy
 import GA
 
+#sample from: https://towardsdatascience.com/genetic-algorithm-implementation-in-python-5ab67bb124a6
+
 equation_inputs = [4,-2,3.5,5,-11,-4.7]
 num_weights = 6
 

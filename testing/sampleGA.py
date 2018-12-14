@@ -6,7 +6,7 @@ POPULATION_SIZE = 100
 
 GENES = '''abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890, .-;:_!"#%&/()=?@${[]}'''
 
-TARGET = "Genetic Algorithm"
+TARGET = "Embry-Riddle"
 
 class Individual(object):
     def __init__(self, chromosome):
@@ -38,7 +38,7 @@ class Individual(object):
             
             else: 
                 child_chromosome.append(self.mutated_genes())
-
+        
         return Individual(child_chromosome)
 
     def cal_fitness(self):
@@ -58,6 +58,7 @@ def main():
 
     for _ in range(POPULATION_SIZE):
         gnome = Individual.create_gnome()
+        print(gnome)
         population.append(Individual(gnome))
     
     while not found:
@@ -81,13 +82,13 @@ def main():
 
         population = new_generation
 
-        print("Generation: {}\tString: {}\tFitness: {}".\
-            format(generation,"".join(population[0].chromosome),population[0].fitness))
+        # print("Generation: {}\tString: {}\tFitness: {}".\
+        #     format(generation,"".join(population[0].chromosome),population[0].fitness))
 
         generation += 1
     
-    print("Generation: {}\tString: {}\tFitness: {}".\
-        format(generation,"".join(population[0].chromosome), population[0].fitness))
+    # print("Generation: {}\tString: {}\tFitness: {}".\
+    #     format(generation,"".join(population[0].chromosome), population[0].fitness))
 
 
 if __name__ == '__main__':

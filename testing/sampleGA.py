@@ -7,7 +7,7 @@ POPULATION_SIZE = 100
 
 GENES = '''abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890, .-;:_!"#%&/()=?@${[]}'''
 
-TARGET = "Embry-Riddle"
+TARGET = "This is something cool"
 
 class Individual(object):
     def __init__(self, chromosome):
@@ -59,7 +59,7 @@ def main():
 
     for _ in range(POPULATION_SIZE):
         gnome = Individual.create_gnome()
-        print(gnome)
+        #print(gnome)
         population.append(Individual(gnome))
     
     while not found:
@@ -83,13 +83,13 @@ def main():
 
         population = new_generation
 
-        # print("Generation: {}\tString: {}\tFitness: {}".\
-        #     format(generation,"".join(population[0].chromosome),population[0].fitness))
+        print("Generation: {}\tString: {}\tFitness: {}".\
+            format(generation,"".join(population[0].chromosome),population[0].fitness))
 
         generation += 1
     
-    # print("Generation: {}\tString: {}\tFitness: {}".\
-    #     format(generation,"".join(population[0].chromosome), population[0].fitness))
+    print("Generation: {}\tString: {}\tFitness: {}".\
+        format(generation,"".join(population[0].chromosome), population[0].fitness))
 
 
 if __name__ == '__main__':

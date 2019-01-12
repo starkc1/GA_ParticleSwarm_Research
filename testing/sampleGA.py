@@ -7,7 +7,7 @@ POPULATION_SIZE = 100
 
 GENES = '''abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890, .-;:_!"#%&/()=?@${[]}'''
 
-TARGET = "Embry-Riddle"
+TARGET = "This is something cool"
 
 class Individual(object):
     def __init__(self, chromosome):

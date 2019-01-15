@@ -10,6 +10,7 @@ def select_mating_pool(pop, fit, num_parents):
         max_fitness_idx = max_fitness_idx[0][0]
         parents[parent_num, :] = pop[max_fitness_idx, :]
         fit[max_fitness_idx] = -999999999999
+    print(parents)
     return parents
 
 def crossover(parents, offspring_size):

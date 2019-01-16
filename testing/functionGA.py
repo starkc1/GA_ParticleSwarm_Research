@@ -8,30 +8,20 @@ equation_inputs = [4,-2,3.5,5,-11,-4.7]
 
 num_weights = 6
 
-<<<<<<< HEAD
-sol_per_pop = 8
-num_parents_mating = 2
-=======
-sol_per_pop = 4
+sol_per_pop = 10
 num_parents_mating = 4
->>>>>>> 002f504713ffb54ef899245954af7ee41b6ae0ef
 
 pop_size = (sol_per_pop,num_weights)
-print(pop_size)
+#print(pop_size)
 new_population = numpy.random.uniform(low=-4.0, high=4.0, size=pop_size)
-<<<<<<< HEAD
-
-num_generations = 10
-=======
-print(new_population)
-num_generations = 5
->>>>>>> 002f504713ffb54ef899245954af7ee41b6ae0ef
+print("Population: ", new_population)
+num_generations = 1
 
 for generation in range(num_generations):
     #print("Generation : ", generation)
 
     fitness = GA.cal_pop_fitness(equation_inputs, new_population)
-    #print(fitness)
+    #print("fitness: ", fitness)
     parents = GA.select_mating_pool(new_population, fitness, num_parents_mating)
 
     offspring_crossover = GA.crossover(parents, offspring_size=(pop_size[0] - parents.shape[0], num_weights))

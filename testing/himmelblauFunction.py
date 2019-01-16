@@ -1,27 +1,34 @@
 import numpy
 import himmelblauGA as GA
 
-#f(x,y) = (x^2 + y - 11)^2 + (x + y^2 - 7)^2
-#minima 1: f(3.0, 2.0) = 0.0
-#minima 2: f(-2.805118, 3.131312) = 0.0
-#minima 3: f(-3.779310, -3.283186) = 0.0
-#minima 4: f(3.584428, -1.848126) = 0.0
+#minima f(x,y) => f(+-8.05502, +-9.66459) = −19.2085
 
-population_size = 4 #manager input
-population = numpy.random.uniform(low=-6, high=6, size=population_size) #manager input
+num_values = 2
+num_parents = 4
+solutions_per_pop = 10
+population_size = (solutions_per_pop, num_values) #manager input
+population = numpy.random.uniform(low=-10, high=10, size=population_size) #manager input
+#population = [3.0, 2.0]
 
-generations = 5 #manager input
+generations = 1 #manager input
 
 print("Population: ", population)
+
 
 for generation in range(generations):
     print("Generation: ", generation)
 
+    fitness = GA.calc_fitness(population)
+    
+    parents = GA.select_parents(population, fitness, num_parents)
+
+    crossover = GA.crossover(parents, children_size=(population_size[0] - parents.shape[0], num_values))
+
+    GA.mutation(crossover)
     
 
-    
 
 
-print("Result: ", (pow((pow(population[0][0], 2) + population[0][1] - 11), 2) + pow((population[0][0] + pow(population[0][1], 2) - 7), 2)))
+
 
     

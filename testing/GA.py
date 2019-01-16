@@ -9,8 +9,8 @@ def select_mating_pool(pop, fit, num_parents):
         max_fitness_idx = numpy.where(fit == numpy.max(fit))
         max_fitness_idx = max_fitness_idx[0][0]
         parents[parent_num, :] = pop[max_fitness_idx, :]
-        fit[max_fitness_idx] = -999999999999
-    print(parents)
+        fit[max_fitness_idx] = -999999999999 
+    print("parents: ", parents)
     return parents
 
 def crossover(parents, offspring_size):
@@ -25,7 +25,10 @@ def crossover(parents, offspring_size):
         offspring[k, 0:crossover_point] = parents[parent1_idx, 0:crossover_point]
 
         offspring[k, crossover_point] = parents[parent2_idx, crossover_point]
+    print('offspring: ', offspring)
     return offspring
+
+
 
 def mutation(offspring_crossover):
     for idx in range(offspring_crossover.shape[0]):

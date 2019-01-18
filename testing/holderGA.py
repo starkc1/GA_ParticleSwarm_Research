@@ -11,7 +11,7 @@ def calc_fitness(population):
     result = []
     for pop in range(len(population)):
         result.append(holderTable(population[pop]))
-    print("fitness: ", result)
+    #print("fitness: ", result)
     return result
 
 def select_parents(population, fitness, num_parents):
@@ -21,7 +21,7 @@ def select_parents(population, fitness, num_parents):
         min_fitness_index = min_fitness_index[0][0]
         parents[parent_num, :] = population[min_fitness_index, :]
         fitness[min_fitness_index] = 99999999999
-    print("parents: ", parents)
+    #print("parents: ", parents)
     return parents
 
 def crossover(parents, children_size):
@@ -33,12 +33,12 @@ def crossover(parents, children_size):
         parent2_index= (k+1)%parents.shape[0]
         children[k, 0:crossover_point] = parents[parent1_index, 0:crossover_point]
         children[k, crossover_point] = parents[parent2_index, crossover_point]
-    print('children: ', children)
+    #print('children: ', children)
     return children
 
 def mutation(children_crossover):
-    print(children_crossover[1, 2])
-    # for index in range(children_crossover.shape[0]):
-    #     random_val= numpy.random.uniform(-1.0, 1.0, 1)
-    #     children_crossover[index, 2] = children_crossover[index, 2] + random_val
-    # print("mutated: ", children_crossover)
+    for index in range(children_crossover.shape[0]):
+        random_val= numpy.random.uniform(-1.0, 1.0, 1)
+        children_crossover[index, 1] = children_crossover[index, 1] + random_val
+    #print("mutated: ", children_crossover)
+    return children_crossover
